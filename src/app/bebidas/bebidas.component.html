@@ -1,6 +1,6 @@
-<app-bebidas-edit></app-bebidas-edit>
+<app-bebidas-edit> [bebida]="BebidaSelecionada" </app-bebidas-edit>
 
-<table >
+<table>
   <tr>
     <td>ID</td>
     <td>NOME</td>
@@ -9,13 +9,17 @@
     <td>QUANTIDADE</td>
   </tr>
   <tr *ngFor="let bebida of Bebidas">
-    <td>{{bebida.id}}</td>
-    <td>{{bebida.nome}}</td>
-    <td>{{bebida.tipo}}</td>
-    <td>{{bebida.sabor}}</td>
-    <td>{{bebida.qtd}}</td>
+    <button [class.selecionada]="bebida === bebida " type="button" (click)=" onSelect (bebida)">
+      <td>{{bebida.id}}</td>
+      <td>{{bebida.nome}}</td>
+      <td>{{bebida.tipo}}</td>
+      <td>{{bebida.sabor}}</td>
+      <td>{{bebida.qtd}}</td>
+    </button>
   </tr>
 </table>
+
+
 
 <!-- id: number;
 nome: string;

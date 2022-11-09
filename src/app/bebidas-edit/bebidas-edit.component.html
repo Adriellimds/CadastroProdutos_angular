@@ -1,4 +1,8 @@
-<div>
-  <label for="nome">Bebida nome: </label>
-  <input id="nome" [(ngModel)]="bebida.nome" placeholder="nome">
+<div *ngIf="bebida">
+  <h2>{{bebida.nome | uppercase}}</h2>
+  <div class="info">ID: {{bebida.id}}</div>
+  <div class="info">
+    <label for="bebida-nome">BEBIDA SELECIONADA: </label>
+    <input id="bebida-nome" [(ngModel)]="bebida.nome" placeholder="nome">
+  </div>
 </div>
